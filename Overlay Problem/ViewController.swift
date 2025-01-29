@@ -32,17 +32,33 @@ class ViewController: NSViewController {
         customView.addGestureRecognizer(rec)
         customView.addGestureRecognizer(panRec)
         
-        // set up the SwiftUI view as a subview of the view controller's view
-        // once this hostingview is added, the gesture recognizers no longer work
-        // it's as if the nshostingview/swiftui now swallows all events.
+        
+        // set up a hosting view and add it to the view
+        // this will block the gesture recognizers.
         let buttonView = ButtonView()
-        let hostingView = NSHostingView(rootView: buttonView)
+        let hostingView = TransparentHostingView(rootView: buttonView)
         
         hostingView.frame = self.view.bounds
         hostingView.autoresizingMask = [.height, .width]
         
         // Add it as a subview
         view.addSubview(hostingView)
+        
+        
+        
+//        let buttonView = ButtonView()
+//           let hostingView = TransparentHostingView(rootView: buttonView)
+//           
+//           // Explicitly disable autoresizing mask
+//           hostingView.translatesAutoresizingMaskIntoConstraints = false
+//           
+//           view.addSubview(hostingView)
+//           
+//           // Constrain to safe area or specific position
+//           NSLayoutConstraint.activate([
+//               hostingView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+//               hostingView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+//           ])
     }
     
     func createScene () -> SCNScene {
@@ -64,10 +80,12 @@ struct ButtonView: View {
     
     var body: some View {
         ZStack {
+            // Primary transparent layer
+//            Color.clear
+//                .contentShape(Rectangle())
+//                .allowsHitTesting(false)
             
-            // this has no effectÏ
-            // Color.clear.allowsHitTesting(false)
-            
+            // Interactive button
             Button("SwiftUI Button \(count)") {
                 count += 1
             }
@@ -76,6 +94,12 @@ struct ButtonView: View {
             .cornerRadius(8)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
+//        .background {
+//            // Secondary transparent layer with passthrough
+//            Color.clear
+//                .ignoresSafeArea()
+//                .allowsHitTesting(false)
+//        }
     }
 }
 
@@ -89,4 +113,13 @@ class PassthroughHostingView<Content: View>: NSHostingView<Content> {
 //        // Unless you want certain subareas to capture the event.
 //        return nil
 //    }
+}
+
+
+class TransparentHostingView<Content: View>: NSHostingView<Content> {
+    override func hitTest(_ point: NSPoint) -> NSView? {
+        let view = super.hitTest(point)
+        // Allow passthrough if the hit test returns nil (no visible/interactive content)
+        return view == self ? nil : view
+    }
 }
