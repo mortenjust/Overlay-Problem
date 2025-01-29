@@ -718,8 +718,20 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                             </button>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="XF0-r2-iOJ">
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                            </customView>
                         </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="XF0-r2-iOJ" secondAttribute="trailing" id="0ch-NW-QVx"/>
+                            <constraint firstItem="XF0-r2-iOJ" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="A13-3m-JDI"/>
+                            <constraint firstAttribute="bottom" secondItem="XF0-r2-iOJ" secondAttribute="bottom" id="Sz3-Bm-1gi"/>
+                            <constraint firstItem="XF0-r2-iOJ" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="wto-Pj-brd"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="customView" destination="XF0-r2-iOJ" id="xKZ-pD-f2j"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
