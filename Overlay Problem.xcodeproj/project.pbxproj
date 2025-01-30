@@ -175,7 +175,7 @@
 				};
 			};
 			buildConfigurationList = C89136762D4A4A11006C00F9 /* Build configuration list for PBXProject "Overlay Problem" */;
-			compatibilityVersion = "Xcode 15.3";
+			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
