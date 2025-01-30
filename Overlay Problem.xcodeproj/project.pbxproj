@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXContainerItemProxy section */
@@ -30,21 +30,9 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		C891367D2D4A4A11006C00F9 /* Overlay Problem */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "Overlay Problem";
-			sourceTree = "<group>";
-		};
-		C891368F2D4A4A12006C00F9 /* Overlay ProblemTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "Overlay ProblemTests";
-			sourceTree = "<group>";
-		};
-		C89136992D4A4A13006C00F9 /* Overlay ProblemUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "Overlay ProblemUITests";
-			sourceTree = "<group>";
-		};
+		C891367D2D4A4A11006C00F9 /* Overlay Problem */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "Overlay Problem"; sourceTree = "<group>"; };
+		C891368F2D4A4A12006C00F9 /* Overlay ProblemTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "Overlay ProblemTests"; sourceTree = "<group>"; };
+		C89136992D4A4A13006C00F9 /* Overlay ProblemUITests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "Overlay ProblemUITests"; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +175,7 @@
 				};
 			};
 			buildConfigurationList = C89136762D4A4A11006C00F9 /* Build configuration list for PBXProject "Overlay Problem" */;
+			compatibilityVersion = "Xcode 15.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -195,7 +184,6 @@
 			);
 			mainGroup = C89136722D4A4A11006C00F9;
 			minimizedProjectReferenceProxies = 1;
-			preferredProjectObjectVersion = 77;
 			productRefGroup = C891367C2D4A4A11006C00F9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
